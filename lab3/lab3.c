@@ -1,0 +1,97 @@
+/* Note:Your choice is C IDE */
+#include "stdio.h"
+#include "math.h"
+void main()
+{
+	int age,heartBeat;
+	double height,weight,BMI;
+	char hUnit1,hUnit2,wUnit1,wUnit2,weightStatus;
+    printf("Enter your age in years:\n");
+    //input age and heartBeat
+    scanf("%d",&age);
+    printf("Enter your 10 second resting heart rate:\n");
+    scanf("%d",&heartBeat);
+    heartBeat*=6;
+    printf("Enter your height with unit:\n");
+    //input height and weight with transformation of unit
+    scanf("%lf%c%c",&height,&hUnit1,&hUnit2);
+    if(hUnit1=='i'&&hUnit2=='n')
+    height/=39.37;
+    if(hUnit1=='f'&&hUnit2=='t')
+    height/=3.28;
+    printf("Enter your weight with unit:\n");
+    scanf("%lf%c%c",&weight,&wUnit1,&wUnit2);
+    if(wUnit1=='l'&&wUnit2=='b')
+    weight*=0.4536;
+    BMI=weight/pow(height,2);
+    BMI=floor(BMI*10)/10;
+    if(age<18&&age>25)
+    printf("Enter an age between 18 and 25.\n");
+    //output of Severely underweight
+    else
+      if(BMI<16.5&&heartBeat<=60)
+      printf("Your BMI is %.2lf. You have Severely underweight.\n"
+             "Cardio fitness is Excellent. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI<16.5&&heartBeat>=61&&heartBeat<=70)
+      printf("Your BMI is %.2lf. You have Severely underweight.\n"
+             "Cardio fitness is Good. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI<16.5&&heartBeat>=71&&heartBeat<=75)
+      printf("Your BMI is %.2lf. You have Severely underweight.\n"
+             "Cardio fitness is Average. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI<16.5&&heartBeat>=76)
+      printf("Your BMI is %.2lf. You have Severely Underweight.\n"
+             "Cardio fitness is Poor. Resting heart rate is %d.",BMI,heartBeat);
+      //output of underweight
+      if(BMI>=16.5&&BMI<=18.4&&heartBeat<=60)
+      printf("Your BMI is %.2lf. You have Underweight.\n"
+             "Cardio fitness is Excellent. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=16.5&&BMI<=18.4&&heartBeat>=61&&heartBeat<=70)
+      printf("Your BMI is %.2lf. You have Underweight.\n"
+             "Cardio fitness is Good. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=16.5&&BMI<=18.4&&heartBeat>=71&&heartBeat<=75)
+      printf("Your BMI is %.2lf. You have Underweight.\n"
+             "Cardio fitness is Average. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=16.5&&BMI<=18.4&&heartBeat>=76)
+      printf("Your BMI is %.2lf. You have Underweight.\n"
+             "Cardio fitness is Poor. Resting heart rate is %d.",BMI,heartBeat);
+      //output of normal weight
+      if(BMI>=18.5&&BMI<=24.9&&heartBeat<=60)
+      printf("Your BMI is %.2lf. You have Normal weight.\n"
+             "Cardio fitness is excellent. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=18.5&&BMI<=24.9&&heartBeat>=61&&heartBeat<=70)
+      printf("Your BMI is %.2lf. You have Normal weight.\n"
+             "Cardio fitness is Good. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=18.5&&BMI<=24.9&&heartBeat>=71&&heartBeat<=75)
+      printf("Your BMI is %.2lf. You have Normal weight.\n"
+             "Cardio fitness is Average. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=18.5&&BMI<=24.9&&heartBeat<=76)
+      printf("Your BMI is %.2lf. You have Normal weight.\n"
+             "Cardio fitness is Poor. Resting heart rate is %d.",BMI,heartBeat);
+      //output of overweight
+      if(BMI>=25.&&BMI<=29.9&&heartBeat<=60)
+      printf("Your BMI is %.2lf. You have Overweight.\n"
+             "Cardio fitness is excellent. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=25.0&&BMI<=29.9&&heartBeat>=61&&heartBeat<=70)
+      printf("Your BMI is %.2lf. You have Overweight.\n"
+             "Cardio fitness is Good. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=25.0&&BMI<=29.9&&heartBeat>=71&&heartBeat<=75)
+      printf("Your BMI is %.2lf. You have Overweight.\n"
+             "Cardio fitness is Average. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=25.0&&BMI<=29.9&&heartBeat>=76)
+      printf("Your BMI is %.2lf. You have Overweight.\n"
+             "Cardio fitness is Poor. Resting heart rate is %d.",BMI,heartBeat);
+      //output of obese
+      if(BMI>=30&&heartBeat<=60)
+      printf("Your BMI is %.2lf. You have Obese.\n"
+             "Cardio fitness is excellent. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=30&&heartBeat>=61&&heartBeat<=70)
+      printf("Your BMI is %.2lf. You have Obese.\n"
+             "Cardio fitness is Good. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=30&&heartBeat>=71&&heartBeat<=75)
+      printf("Your BMI is %.2lf. You have Obese.\n"
+             "Cardio fitness is Average. Resting heart rate is %d.",BMI,heartBeat);
+      else if(BMI>=30&&heartBeat>=76)
+      printf("Your BMI is %.2lf. You have Obese.\n"
+             "Cardio fitness is Poor. Resting heart rate is %d.",BMI,heartBeat);
+    
+}
